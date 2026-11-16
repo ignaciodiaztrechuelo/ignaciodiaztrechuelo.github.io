@@ -29,7 +29,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--navy); outline-
 
 /* Cabecera */
 .hero { background: var(--navy); color: #fff; padding: 36px 18px 30px; }
-.hero-in { max-width: 760px; margin: 0 auto; display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+.hero-in { max-width: 724px; margin: 0 auto; display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
 .hero img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,.85); flex: none; }
 .hero h1 { font-size: 1.6rem; line-height: 1.15; font-weight: 800; letter-spacing: -.01em; text-wrap: balance; }
 .hero .sub { margin-top: 6px; color: #D3DEEC; font-size: .98rem; }
@@ -71,7 +71,7 @@ h3 { font-size: 1.02rem; font-weight: 700; line-height: 1.35; }
 .edu { display: grid; gap: 14px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: .88rem; }
-.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .fact { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: .92rem; }
 .fact b { display: block; color: var(--navy); font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; }
 
@@ -82,7 +82,7 @@ h3 { font-size: 1.02rem; font-weight: 700; line-height: 1.35; }
 h4 { font-size: .8rem; color: var(--muted); font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .08em; }
 .chip-soft { background: var(--navy-soft); border-color: var(--navy-soft); color: var(--navy); }
 .dock { display: none; }
-.lang { position: fixed; top: 14px; right: 14px; z-index: 5; display: flex; gap: 2px; background: rgba(255,255,255,.14); border-radius: 999px; padding: 3px; }
+.lang { position: absolute; top: 14px; right: 14px; z-index: 5; display: flex; gap: 2px; background: rgba(255,255,255,.14); border-radius: 999px; padding: 3px; }
 .lang button { font: inherit; font-size: .78rem; font-weight: 700; color: #fff; background: transparent; border: 0; border-radius: 999px; padding: 4px 10px; cursor: pointer; }
 .lang button[aria-pressed="true"] { background: #fff; color: var(--navy); }
 .hero { position: relative; }
@@ -102,6 +102,7 @@ footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line);
   .facts { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
+  .facts { grid-template-columns: 1fr; }
   body { padding-bottom: 72px; }
   .dock { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); border-top: 1px solid var(--line); box-shadow: 0 -4px 14px rgba(31,58,95,.08); z-index: 10; }
   .dock a { text-align: center; padding: 10px 6px; border-radius: 10px; border: 1px solid var(--line); text-decoration: none; font-weight: 700; font-size: .9rem; color: var(--navy); background: var(--paper); }
@@ -126,20 +127,20 @@ footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line);
   <a class="btn btn-cv" href="https://drive.google.com/file/d/1TFqwNIag1MdpA5lJQltzciWqdViRMNWR/view?usp=sharing" target="_blank" rel="noopener"><b>Descargar CV (PDF)</b><span>Se abre en Google Drive</span></a>
 </div>
 <main class="wrap">
-  <div class="stats"><div class="stat"><strong>7</strong><span>temporadas de verano en la misma empresa</span></div><div class="stat"><strong>3 sem.</strong><span>para ascender a Lead en EE. UU.</span></div><div class="stat"><strong>60 pers.</strong><span>en eventos propios de cocina en directo</span></div></div>
+  <div class="stats"><div class="stat"><strong>7</strong><span>temporadas de verano en la misma empresa</span></div><div class="stat"><strong>3 sem.</strong><span>para ascender a Lead en EE.&nbsp;UU.</span></div><div class="stat"><strong>60 pers.</strong><span>en eventos propios de cocina en directo</span></div></div>
   <section><h2>Perfil</h2><p class="lead">Estudiante de Gestión de Hotel y Empresas Turísticas, con formación en contabilidad y experiencia en cocina, sala, eventos y venta, tratando con clientes de todas las edades y nacionalidades. Desde 2019 compagino mis estudios con distintos trabajos. Mi objetivo es crecer hacia la gestión gastronómica, y con mi servicio de arroces para eventos ya he dado el primer paso.</p></section>
   <section><h2>Experiencia profesional</h2><div class="tl">
 <article class="job next"><div class="job-head"><h3>Prácticas profesionales de cocina y sala <span class="tag tag-next">Próximamente</span></h3><span class="date">Ene – May 2027</span></div><p class="org">Restaurante Alabardero Escuela</p></article>
 <article class="job now"><div class="job-head"><h3>Personal de cocina <span class="tag">Actual</span></h3><span class="date">Nov 2026 – Actualidad</span></div><p class="org">Catering Antonio Bort</p></article>
 <article class="job now"><div class="job-head"><h3>Arroces para eventos · Proyecto propio</h3><span class="date">2026 – Actualidad</span></div><p class="org">Arroces cocinados en directo en casa del cliente · Sevilla y Huelva</p><ul><li>Planificación, compras y elaboración in situ para eventos de hasta 60 personas.</li></ul></article>
-<article class="job"><div class="job-head"><h3>Ride Attendant → Lead</h3><span class="date">Verano 2025</span></div><p class="org">Mt. Olympus Water &amp; Theme Park · Wisconsin Dells (EE. UU.)</p><ul><li>Ascendido a Lead en 3 semanas, siendo de los últimos en incorporarme.</li><li>Reconocido varias semanas como Employee of the Week.</li><li>Como Lead: gestión de descansos, supervisión del equipo y atención a visitantes.</li></ul></article>
+<article class="job"><div class="job-head"><h3>Ride Attendant → Lead</h3><span class="date">Verano 2025</span></div><p class="org">Mt. Olympus Water &amp; Theme Park · Wisconsin Dells (EE.&nbsp;UU.)</p><ul><li>Ascendido a Lead en 3 semanas, siendo de los últimos en incorporarme.</li><li>Reconocido varias semanas como Employee of the Week.</li><li>Como Lead: gestión de descansos, supervisión del equipo y atención a visitantes.</li></ul></article>
 <article class="job"><div class="job-head"><h3>Monitor de vela</h3><span class="date">7 temporadas · 2019 – 2026</span></div><p class="org">Surffactory, S.L. · Islantilla (Huelva)</p><ul><li>Formación y atención a alumnos y clientes en español e inglés.</li><li>Venta de actividades y packs en taquilla y oficina.</li><li>Organización del trabajo del equipo: reparto de tareas y planificación diaria.</li><li>Gestión de material, accesos y logística de las actividades acuáticas.</li></ul></article>
 <article class="job"><div class="job-head"><h3>Camarero de eventos</h3><span class="date">2023</span></div><p class="org">Catering Alberto Mejías</p></article>
 <article class="job"><div class="job-head"><h3>Mantenimiento y apoyo en oficina</h3><span class="date">Oct 2022 – Feb 2023</span></div><p class="org">Gros, S.L.</p><ul><li>Trabajo de campo: limpieza, reparaciones y abrillantado de suelos en urbanizaciones.</li><li>Oficina: organización de empleados y trato con clientes.</li></ul></article>
   </div></section>
   <section><h2>Formación</h2><div class="edu"><div><div class="job-head"><h3>Título Superior de Gestión de Hotel y Empresas Turísticas</h3><span class="date">2026 – Actualidad</span></div><p class="org">Escuela Superior de Hostelería de Sevilla · 1.º curso</p></div><div><div class="job-head"><h3>Microtítulo de Contabilidad Empresarial</h3><span class="date">2024 – 2025</span></div><p class="org">Universidad Nacional de Educación a Distancia (UNED)</p></div><div><div class="job-head"><h3>Bachillerato</h3><span class="date">2021</span></div><p class="org">Preuniversitaria de Sevilla</p></div></div></section>
   <section><h2>Habilidades</h2><div class="skills"><div><h4>Profesionales</h4><div class="chips"><span class="chip">Atención al cliente y venta (español e inglés)</span><span class="chip">Cocina y servicio de sala en eventos</span><span class="chip">Supervisión de equipos</span><span class="chip">Organización de tareas</span></div></div><div><h4>Personales</h4><div class="chips"><span class="chip chip-soft">Resistencia en jornadas intensas</span><span class="chip chip-soft">Adaptabilidad y aprendizaje rápido</span><span class="chip chip-soft">Autoexigencia</span></div></div></div></section>
-  <section><h2>Otros datos</h2><div class="facts"><div class="fact"><b>Idiomas</b>Español nativo · Inglés B2 (trabajo diario en EE. UU.)</div><div class="fact"><b>Carné</b>Carné B y vehículo propio</div><div class="fact"><b>Datos personales</b>Nacido en 2003 · Sevilla</div></div></section>
+  <section><h2>Otros datos</h2><div class="facts"><div class="fact"><b>Idiomas</b>Español nativo · Inglés B2 (trabajo diario en EE.&nbsp;UU.)</div><div class="fact"><b>Carné</b>Carné B y vehículo propio</div><div class="fact"><b>Datos personales</b>Nacido en 2003 · Sevilla</div></div></section>
   <footer>Ignacio Díaz-Trechuelo · Sevilla · Actualizado en noviembre de 2026</footer>
 </main>
 <nav class="dock"><a href="tel:+34644304865">Llamar</a><a href="mailto:idtrechuelo@gmail.com">Email</a><a class="dock-cv" href="https://drive.google.com/file/d/1TFqwNIag1MdpA5lJQltzciWqdViRMNWR/view?usp=sharing" target="_blank" rel="noopener">CV (PDF)</a></nav>
