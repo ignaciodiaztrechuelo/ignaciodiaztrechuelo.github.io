@@ -1,193 +1,421 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ignacio Díaz-Trechuelo · CV</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<title>Ignacio Díaz-Trechuelo</title>
+
 <style>
 :root {
-  /* Una sola columna pensada para móvil: cabecera de contacto, cifras clave y CV como línea de tiempo. Tema claro fijo, a juego con el CV impreso. */
-  --navy: #1F3A5F;
-  --navy-soft: #E8EEF5;
-  --ink: #1E2530;
-  --muted: #5E6B7A;
-  --line: #D9E0E8;
-  --paper: #FFFFFF;
-  --bg: #F5F7FA;
-  --font: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
-  color-scheme: light;
+    --blue: #2049aa;
+    --text: #242528;
+    --muted: #666;
+    --line: #e2e2e2;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.55; -webkit-text-size-adjust: 100%; }
-a { color: var(--navy); }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; border-radius: 6px; }
 
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 18px 48px; }
+* { box-sizing: border-box; }
 
-/* Cabecera */
-.hero { background: var(--navy); color: #fff; padding: 36px 18px 30px; }
-.hero-in { max-width: 724px; margin: 0 auto; display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
-.hero img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,.85); flex: none; }
-.hero h1 { font-size: 1.6rem; line-height: 1.15; font-weight: 800; letter-spacing: -.01em; text-wrap: balance; }
-.hero .sub { margin-top: 6px; color: #D3DEEC; font-size: .98rem; }
-.pill { display: inline-block; margin-top: 12px; padding: 4px 12px; border-radius: 999px; background: rgba(255,255,255,.14); color: #fff; font-size: .82rem; font-weight: 600; }
-
-.contact { position: relative; z-index: 2; max-width: 760px; margin: -18px auto 0; padding: 0 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.btn { display: flex; flex-direction: column; gap: 2px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; text-decoration: none; color: var(--ink); box-shadow: 0 4px 14px rgba(31,58,95,.08); }
-.btn b { color: var(--navy); font-size: .95rem; }
-.btn span { font-size: .85rem; color: var(--muted); word-break: break-all; }
-.btn:hover b { text-decoration: underline; }
-.btn-cv { grid-column: 1 / -1; background: var(--navy); border-color: var(--navy); flex-direction: row; justify-content: space-between; align-items: center; }
-.btn-cv b { color: #fff; }
-.btn-cv span { color: #C9D5E4; word-break: normal; }
-
-/* Cifras */
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 26px; }
-.stat { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 12px; }
-.stat strong { display: block; font-size: 1.45rem; font-weight: 800; color: var(--navy); line-height: 1.1; font-variant-numeric: tabular-nums; }
-.stat span { display: block; margin-top: 4px; font-size: .8rem; color: var(--muted); line-height: 1.35; }
-
-/* Secciones */
-section { margin-top: 34px; }
-h2 { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); font-weight: 800; padding-bottom: 8px; border-bottom: 2px solid var(--navy); margin-bottom: 16px; }
-.lead { color: var(--ink); max-width: 65ch; }
-
-.tl { display: grid; gap: 0; }
-.job { position: relative; padding: 0 0 20px 22px; border-left: 2px solid var(--line); }
-.job:last-child { padding-bottom: 0; }
-.job::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--paper); border: 2px solid var(--navy); }
-.job.now::before { background: var(--navy); }
-.job-head { display: flex; justify-content: space-between; gap: 4px 14px; flex-wrap: wrap; align-items: baseline; }
-h3 { font-size: 1.02rem; font-weight: 700; line-height: 1.35; }
-.date { font-size: .82rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
-.org { font-style: italic; color: var(--muted); font-size: .92rem; }
-.job ul { margin-top: 6px; padding-left: 18px; }
-.job li { font-size: .93rem; margin-top: 2px; }
-.tag { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: var(--navy-soft); color: var(--navy); font-size: .72rem; font-weight: 700; font-style: normal; vertical-align: 2px; }
-
-.edu { display: grid; gap: 14px; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: .88rem; }
-.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.fact { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: .92rem; }
-.fact b { display: block; color: var(--navy); font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; }
-
-.job.next::before { background: var(--paper); border-style: dashed; }
-.job.next .org, .job.next h3 { opacity: .85; }
-.tag-next { background: #FFF3DC; color: #8A5A00; }
-.skills { display: grid; gap: 16px; }
-h4 { font-size: .8rem; color: var(--muted); font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .08em; }
-.chip-soft { background: var(--navy-soft); border-color: var(--navy-soft); color: var(--navy); }
-.dock { display: none; }
-.lang { position: fixed; top: 14px; right: 14px; z-index: 20; display: flex; gap: 2px; background: var(--navy); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 3px; box-shadow: 0 4px 12px rgba(31,58,95,.25); }
-.lang button { font: inherit; font-size: .78rem; font-weight: 700; color: #fff; background: transparent; border: 0; border-radius: 999px; padding: 4px 10px; cursor: pointer; }
-.lang button[aria-pressed="true"] { background: #fff; color: var(--navy); }
-.hero { position: relative; }
-[data-lang] { display: none; }
-[data-lang].on { display: block; }
-footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; text-align: center; }
-
-@media (max-width: 480px) {
-  .hero-in { flex-direction: column; text-align: center; }
-  .hero h1 { font-size: 1.4rem; }
-  .contact { grid-template-columns: 1fr; }
-  .stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .stat { padding: 10px 8px; text-align: center; }
-  .stat strong { font-size: 1.15rem; }
-  .stat span { font-size: .72rem; }
-  .job-head { flex-direction: column; gap: 0; }
-  .facts { grid-template-columns: 1fr; }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: white;
+    line-height: 1.65;
 }
-@media (max-width: 640px) {
-  .facts { grid-template-columns: 1fr; }
-  body { padding-bottom: 72px; }
-  .dock { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); border-top: 1px solid var(--line); box-shadow: 0 -4px 14px rgba(31,58,95,.08); z-index: 10; }
-  .dock a { text-align: center; padding: 10px 6px; border-radius: 10px; border: 1px solid var(--line); text-decoration: none; font-weight: 700; font-size: .9rem; color: var(--navy); background: var(--paper); }
-  .dock .dock-cv { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+a {
+    color: var(--blue);
+    text-underline-offset: 4px;
 }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+header {
+    border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+    max-width: 1050px;
+    margin: auto;
+    padding: 23px 30px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.brand {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text);
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.accent { color: var(--blue); }
+
+nav, .languages {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a, .languages a {
+    font-size: .9rem;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+nav a.active, .languages a.active {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.languages {
+    gap: 8px;
+    margin-left: 10px;
+}
+
+main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 65px 30px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    gap: 55px;
+    align-items: center;
+}
+
+h1 {
+    font-size: clamp(2.3rem, 4.5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.05em;
+    margin: 0 0 20px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    letter-spacing: -0.035em;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.availability {
+    color: var(--blue);
+    font-weight: bold;
+    font-size: .95rem;
+}
+
+.photo {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.contact {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: .9rem;
+    margin-top: 25px;
+}
+
+section {
+    margin-top: 35px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.stat strong {
+    color: var(--blue);
+    font-size: 1.6rem;
+    display: block;
+}
+
+.stat span {
+    font-size: .9rem;
+    color: var(--muted);
+}
+
+footer {
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+[hidden] { display: none !important; }
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 18px 22px;
+    }
+
+    .brand { width: 100%; }
+
+    main { padding: 35px 22px; }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .photo {
+        grid-row: 1;
+        max-width: 240px;
+    }
+
+    .stats { gap: 12px; }
+
+    .stat strong { font-size: 1.25rem; }
+
+    footer { margin: 0 22px; }
+}
 </style>
 </head>
+
 <body>
-<div class="lang" role="group" aria-label="Idioma / Language">
-  <button type="button" id="b-es" data-set="es" aria-pressed="true">ES</button>
-  <button type="button" id="b-en" data-set="en" aria-pressed="false">EN</button>
-</div>
-<div data-lang="es" lang="es">
-<header class="hero"><div class="hero-in">
-  <img src="foto.jpg" alt="Ignacio Díaz-Trechuelo">
-  <div><h1>Ignacio Díaz-Trechuelo Sánchez-Molini</h1><p class="sub">Estudiante en la Escuela Superior de Hostelería de Sevilla</p><span class="pill">Busco prácticas · Verano 2027</span></div>
-</div></header>
-<div class="contact">
-  <a class="btn" href="tel:+34644304865"><b>Llamar</b><span>+34 644 30 48 65</span></a>
-  <a class="btn" href="mailto:idtrechuelo@gmail.com"><b>Enviar email</b><span>idtrechuelo@gmail.com</span></a>
-  <a class="btn btn-cv" href="https://drive.google.com/file/d/1TFqwNIag1MdpA5lJQltzciWqdViRMNWR/view?usp=sharing" target="_blank" rel="noopener"><b>Descargar CV (PDF)</b><span>Se abre en Google Drive</span></a>
-</div>
-<main class="wrap">
-  <div class="stats"><div class="stat"><strong>7</strong><span>temporadas de verano en la misma empresa</span></div><div class="stat"><strong>3 sem.</strong><span>para ascender a Lead en EE.&nbsp;UU.</span></div><div class="stat"><strong>60 pers.</strong><span>en eventos propios de cocina en directo</span></div></div>
-  <section><h2>Perfil</h2><p class="lead">Estudiante de Gestión de Hotel y Empresas Turísticas, con formación en contabilidad y experiencia en cocina, sala, eventos y venta, tratando con clientes de todas las edades y nacionalidades. Desde 2019 compagino mis estudios con distintos trabajos. Mi objetivo es crecer hacia la gestión gastronómica, y con mi servicio de arroces para eventos ya he dado el primer paso.</p></section>
-  <section><h2>Experiencia profesional</h2><div class="tl">
-<article class="job next"><div class="job-head"><h3>Prácticas profesionales de cocina y sala <span class="tag tag-next">Próximamente</span></h3><span class="date">Ene – May 2027</span></div><p class="org">Restaurante Alabardero Escuela</p></article>
-<article class="job now"><div class="job-head"><h3>Personal de cocina <span class="tag">Actual</span></h3><span class="date">Nov 2026 – Actualidad</span></div><p class="org">Catering Antonio Bort</p></article>
-<article class="job now"><div class="job-head"><h3>Arroces para eventos · Proyecto propio</h3><span class="date">2026 – Actualidad</span></div><p class="org">Arroces cocinados en directo en casa del cliente · Sevilla y Huelva</p><ul><li>Planificación, compras y elaboración in situ para eventos de hasta 60 personas.</li></ul></article>
-<article class="job"><div class="job-head"><h3>Ride Attendant → Lead</h3><span class="date">Verano 2025</span></div><p class="org">Mt. Olympus Water &amp; Theme Park · Wisconsin Dells (EE.&nbsp;UU.)</p><ul><li>Ascendido a Lead en 3 semanas, siendo de los últimos en incorporarme.</li><li>Reconocido varias semanas como Employee of the Week.</li><li>Como Lead: gestión de descansos, supervisión del equipo y atención a visitantes.</li></ul></article>
-<article class="job"><div class="job-head"><h3>Monitor de vela</h3><span class="date">7 temporadas · 2019 – 2026</span></div><p class="org">Surffactory, S.L. · Islantilla (Huelva)</p><ul><li>Formación y atención a alumnos y clientes en español e inglés.</li><li>Venta de actividades y packs en taquilla y oficina.</li><li>Organización del trabajo del equipo: reparto de tareas y planificación diaria.</li><li>Gestión de material, accesos y logística de las actividades acuáticas.</li></ul></article>
-<article class="job"><div class="job-head"><h3>Camarero de eventos</h3><span class="date">2023</span></div><p class="org">Catering Alberto Mejías</p></article>
-<article class="job"><div class="job-head"><h3>Mantenimiento y apoyo en oficina</h3><span class="date">Oct 2022 – Feb 2023</span></div><p class="org">Gros, S.L.</p><ul><li>Trabajo de campo: limpieza, reparaciones y abrillantado de suelos en urbanizaciones.</li><li>Oficina: organización de empleados y trato con clientes.</li></ul></article>
-  </div></section>
-  <section><h2>Formación</h2><div class="edu"><div><div class="job-head"><h3>Título Superior de Gestión de Hotel y Empresas Turísticas</h3><span class="date">2026 – Actualidad</span></div><p class="org">Escuela Superior de Hostelería de Sevilla · 1.º curso</p></div><div><div class="job-head"><h3>Microtítulo de Contabilidad Empresarial</h3><span class="date">2024 – 2025</span></div><p class="org">Universidad Nacional de Educación a Distancia (UNED)</p></div><div><div class="job-head"><h3>Bachillerato</h3><span class="date">2021</span></div><p class="org">Preuniversitaria de Sevilla</p></div></div></section>
-  <section><h2>Habilidades</h2><div class="skills"><div><h4>Profesionales</h4><div class="chips"><span class="chip">Atención al cliente y venta (español e inglés)</span><span class="chip">Cocina y servicio de sala en eventos</span><span class="chip">Supervisión de equipos</span><span class="chip">Organización de tareas</span></div></div><div><h4>Personales</h4><div class="chips"><span class="chip chip-soft">Resistencia en jornadas intensas</span><span class="chip chip-soft">Adaptabilidad y aprendizaje rápido</span><span class="chip chip-soft">Autoexigencia</span></div></div></div></section>
-  <section><h2>Otros datos</h2><div class="facts"><div class="fact"><b>Idiomas</b>Español nativo · Inglés B2 (trabajo diario en EE.&nbsp;UU.)</div><div class="fact"><b>Carné</b>Carné B y vehículo propio</div><div class="fact"><b>Datos personales</b>Nacido en 2003 · Sevilla</div></div></section>
-  <footer>Ignacio Díaz-Trechuelo · Sevilla · Actualizado en noviembre de 2026</footer>
+
+<header>
+    <div class="navbar">
+        <a class="brand" data-page="index.html" href="index.html">
+            Ignacio Díaz-Trechuelo<span class="accent">.</span>
+        </a>
+
+        <nav>
+            <a class="active" data-page="index.html" href="index.html">
+                <span lang="es" data-lang="es">Sobre mí</span>
+                <span lang="en" data-lang="en" hidden>About</span>
+            </a>
+            <a data-page="cv.html" href="cv.html">CV</a>
+        </nav>
+
+        <div class="languages">
+            <a href="#es" id="es-button">ES</a>
+            <span>/</span>
+            <a href="#en" id="en-button">EN</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- ESPAÑOL -->
+    <div data-lang="es" lang="es">
+
+        <div class="hero">
+            <div>
+                <h1>Sobre mí<span class="accent">.</span></h1>
+
+                <p class="subtitle">
+                    Estudiante en la Escuela Superior de Hostelería de Sevilla.
+                </p>
+
+                <p>
+                    Soy Ignacio Díaz-Trechuelo Sánchez-Molini,
+                    estudiante de Gestión de Hotel y Empresas Turísticas,
+                    con formación en contabilidad y experiencia en cocina,
+                    sala, eventos y atención al cliente.
+                </p>
+
+                <p>
+                    Desde 2019 compagino mis estudios con distintos trabajos.
+                    Mi objetivo es orientar mi carrera hacia la gestión
+                    gastronómica y hotelera. Actualmente desarrollo
+                    un proyecto propio de arroces para eventos.
+                </p>
+
+                <p class="availability">
+                    Busco prácticas para el verano de 2027.
+                </p>
+
+                <div class="contact">
+                    <a href="mailto:idtrechuelo@gmail.com">Email ↗</a>
+                    <a href="tel:+34644304865">Teléfono ↗</a>
+                    <a data-page="cv.html" href="cv.html">Currículum vitae ↗</a>
+                </div>
+            </div>
+
+            <img class="photo" src="foto.jpg"
+                 alt="Ignacio Díaz-Trechuelo">
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <strong>7 temporadas</strong>
+                <span>Trabajando en la misma empresa</span>
+            </div>
+            <div class="stat">
+                <strong>3 semanas</strong>
+                <span>Para ascender a Lead en EE. UU.</span>
+            </div>
+            <div class="stat">
+                <strong>60 personas</strong>
+                <span>En eventos propios de cocina en directo</span>
+            </div>
+        </div>
+
+        <section>
+            <h2>Experiencia<span class="accent">.</span></h2>
+            <p>
+                Mi trayectoria profesional incluye experiencia en hostelería,
+                catering, enseñanza de vela, ventas y supervisión de equipos.
+                En 2025 trabajé en Wisconsin, Estados Unidos, donde fui
+                ascendido a Lead y reconocido en varias ocasiones como
+                Employee of the Week.
+            </p>
+            <p>
+                Actualmente trabajo en Catering Antonio Bort y desarrollo
+                un servicio de arroces cocinados en directo para eventos
+                privados en Sevilla y Huelva.
+            </p>
+        </section>
+
+        <section>
+            <h2>Formación e idiomas<span class="accent">.</span></h2>
+            <p>
+                Estudio Gestión de Hotel y Empresas Turísticas y cuento
+                con formación en contabilidad empresarial por la UNED.
+                Hablo español nativo e inglés B2, con experiencia
+                profesional en ambos idiomas.
+            </p>
+            <p>Resido en Sevilla y dispongo de carné B y vehículo propio.</p>
+        </section>
+
+    </div>
+
+    <!-- ENGLISH -->
+    <div data-lang="en" lang="en" hidden>
+
+        <div class="hero">
+            <div>
+                <h1>About<span class="accent">.</span></h1>
+
+                <p class="subtitle">
+                    Student at the Escuela Superior de Hostelería de Sevilla.
+                </p>
+
+                <p>
+                    I am Ignacio Díaz-Trechuelo Sánchez-Molini,
+                    a Hotel and Tourism Management student with training
+                    in accounting and experience in kitchen and dining-room
+                    service, events and customer service.
+                </p>
+
+                <p>
+                    Since 2019, I have combined my studies with different
+                    jobs. My goal is to pursue a career in food and beverage
+                    and hospitality management. I currently run my own
+                    rice-dish catering project.
+                </p>
+
+                <p class="availability">
+                    Seeking an internship for summer 2027.
+                </p>
+
+                <div class="contact">
+                    <a href="mailto:idtrechuelo@gmail.com">Email ↗</a>
+                    <a href="tel:+34644304865">Phone ↗</a>
+                    <a data-page="cv.html" href="cv.html">Curriculum vitae ↗</a>
+                </div>
+            </div>
+
+            <img class="photo" src="foto.jpg"
+                 alt="Ignacio Díaz-Trechuelo">
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <strong>7 seasons</strong>
+                <span>Working for the same company</span>
+            </div>
+            <div class="stat">
+                <strong>3 weeks</strong>
+                <span>To be promoted to Lead in the US</span>
+            </div>
+            <div class="stat">
+                <strong>60 guests</strong>
+                <span>At my own live-cooking events</span>
+            </div>
+        </div>
+
+        <section>
+            <h2>Experience<span class="accent">.</span></h2>
+            <p>
+                My professional background includes hospitality, catering,
+                sailing instruction, sales and team supervision.
+                In 2025, I worked in Wisconsin, USA, where I was promoted
+                to Lead and named Employee of the Week several times.
+            </p>
+            <p>
+                I currently work at Catering Antonio Bort and run a
+                live-cooking service for private events in Seville and Huelva.
+            </p>
+        </section>
+
+        <section>
+            <h2>Education and languages<span class="accent">.</span></h2>
+            <p>
+                I am studying Hotel and Tourism Management and have
+                completed a micro-credential in Business Accounting at UNED.
+                I speak native Spanish and B2 English, with professional
+                experience in both languages.
+            </p>
+            <p>
+                I am based in Seville and hold a driving licence
+                and own a car.
+            </p>
+        </section>
+
+    </div>
+
 </main>
-<nav class="dock"><a href="tel:+34644304865">Llamar</a><a href="mailto:idtrechuelo@gmail.com">Email</a><a class="dock-cv" href="https://drive.google.com/file/d/1TFqwNIag1MdpA5lJQltzciWqdViRMNWR/view?usp=sharing" target="_blank" rel="noopener">CV (PDF)</a></nav>
-</div>
-<div data-lang="en" lang="en">
-<header class="hero"><div class="hero-in">
-  <img src="foto.jpg" alt="Ignacio Díaz-Trechuelo">
-  <div><h1>Ignacio Díaz-Trechuelo Sánchez-Molini</h1><p class="sub">Student at the Escuela Superior de Hostelería de Sevilla</p><span class="pill">Seeking an internship · Summer 2027</span></div>
-</div></header>
-<div class="contact">
-  <a class="btn" href="tel:+34644304865"><b>Call</b><span>+34 644 30 48 65</span></a>
-  <a class="btn" href="mailto:idtrechuelo@gmail.com"><b>Send an email</b><span>idtrechuelo@gmail.com</span></a>
-  <a class="btn btn-cv" href="https://drive.google.com/file/d/1Y2cF6psxRqGzbXcG1CaLcwCZC6CODgYV/view?usp=sharing" target="_blank" rel="noopener"><b>Download CV (PDF)</b><span>Opens in Google Drive</span></a>
-</div>
-<main class="wrap">
-  <div class="stats"><div class="stat"><strong>7</strong><span>summer seasons with the same company</span></div><div class="stat"><strong>3 wks</strong><span>to be promoted to Lead in the US</span></div><div class="stat"><strong>60</strong><span>guests at my own live-cooking events</span></div></div>
-  <section><h2>Profile</h2><p class="lead">Hotel and Tourism Management student with training in accounting and experience in kitchen, dining room, events and sales, serving guests of all ages and nationalities. Since 2019 I have combined my studies with different jobs. My goal is to grow into food and beverage management, and my rice-dish service for events is my first step.</p></section>
-  <section><h2>Professional experience</h2><div class="tl">
-<article class="job next"><div class="job-head"><h3>Professional internship · Kitchen and dining room <span class="tag tag-next">Upcoming</span></h3><span class="date">Jan – May 2027</span></div><p class="org">Restaurante Alabardero Escuela</p></article>
-<article class="job now"><div class="job-head"><h3>Kitchen staff <span class="tag">Current</span></h3><span class="date">Nov 2026 – Present</span></div><p class="org">Catering Antonio Bort</p></article>
-<article class="job now"><div class="job-head"><h3>Rice dishes for events · Own project</h3><span class="date">2026 – Present</span></div><p class="org">Rice dishes cooked live at the client’s home · Seville and Huelva</p><ul><li>Planning, purchasing and on-site cooking for events of up to 60 guests.</li></ul></article>
-<article class="job"><div class="job-head"><h3>Ride Attendant → Lead</h3><span class="date">Summer 2025</span></div><p class="org">Mt. Olympus Water &amp; Theme Park · Wisconsin Dells (USA)</p><ul><li>Promoted to Lead within 3 weeks, despite being one of the last to join.</li><li>Named Employee of the Week several times.</li><li>As Lead: break scheduling, team supervision and guest service.</li></ul></article>
-<article class="job"><div class="job-head"><h3>Sailing instructor</h3><span class="date">7 seasons · 2019 – 2026</span></div><p class="org">Surffactory, S.L. · Islantilla (Huelva)</p><ul><li>Teaching and serving students and clients in Spanish and English.</li><li>Selling activities and packages at the ticket office and front desk.</li><li>Organising the team’s work: task allocation and daily planning.</li><li>Managing equipment, access and logistics for water activities.</li></ul></article>
-<article class="job"><div class="job-head"><h3>Event waiter</h3><span class="date">2023</span></div><p class="org">Catering Alberto Mejías</p></article>
-<article class="job"><div class="job-head"><h3>Maintenance and office support</h3><span class="date">Oct 2022 – Feb 2023</span></div><p class="org">Gros, S.L.</p><ul><li>Field work: cleaning, repairs and floor polishing in residential complexes.</li><li>Office: staff organisation and client relations.</li></ul></article>
-  </div></section>
-  <section><h2>Education</h2><div class="edu"><div><div class="job-head"><h3>Higher Degree in Hotel and Tourism Management</h3><span class="date">2026 – Present</span></div><p class="org">Escuela Superior de Hostelería de Sevilla · 1st year</p></div><div><div class="job-head"><h3>Micro-credential in Business Accounting</h3><span class="date">2024 – 2025</span></div><p class="org">UNED · Spanish National Distance Learning University</p></div><div><div class="job-head"><h3>Bachillerato (Spanish upper-secondary diploma)</h3><span class="date">2021</span></div><p class="org">Preuniversitaria de Sevilla</p></div></div></section>
-  <section><h2>Skills</h2><div class="skills"><div><h4>Professional</h4><div class="chips"><span class="chip">Customer service and sales (Spanish and English)</span><span class="chip">Kitchen and dining-room service at events</span><span class="chip">Team supervision</span><span class="chip">Task organisation</span></div></div><div><h4>Personal</h4><div class="chips"><span class="chip chip-soft">Stamina for long, intense shifts</span><span class="chip chip-soft">Adaptability and fast learning</span><span class="chip chip-soft">High personal standards</span></div></div></div></section>
-  <section><h2>Other details</h2><div class="facts"><div class="fact"><b>Languages</b>Native Spanish · English B2 (daily work in the US)</div><div class="fact"><b>Driving licence</b>B licence and own car</div><div class="fact"><b>Personal details</b>Born 2003 · Seville</div></div></section>
-  <footer>Ignacio Díaz-Trechuelo · Seville · Updated November 2026</footer>
-</main>
-<nav class="dock"><a href="tel:+34644304865">Call</a><a href="mailto:idtrechuelo@gmail.com">Email</a><a class="dock-cv" href="https://drive.google.com/file/d/1Y2cF6psxRqGzbXcG1CaLcwCZC6CODgYV/view?usp=sharing" target="_blank" rel="noopener">CV (PDF)</a></nav>
-</div>
+
+<footer>
+    © 2026 Ignacio Díaz-Trechuelo ·
+    <a href="mailto:idtrechuelo@gmail.com">Email</a>
+</footer>
+
 <script>
-(function () {
-  function show(l) {
-    document.querySelectorAll('[data-lang]').forEach(function (el) { el.classList.toggle('on', el.getAttribute('data-lang') === l); });
-    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-set') === l ? 'true' : 'false'); });
-    document.documentElement.lang = l;
-  }
-  document.querySelectorAll('.lang button').forEach(function (b) {
-    b.addEventListener('click', function () { var l = b.getAttribute('data-set'); show(l); try { history.replaceState(null, '', l === 'en' ? '#en' : '#es'); } catch (e) {} });
-  });
-  function fromHash() { show(location.hash === '#en' ? 'en' : 'es'); }
-  window.addEventListener('hashchange', fromHash);
-  fromHash();
-})();
+function updateLanguage() {
+    const lang = location.hash === "#en" ? "en" : "es";
+
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-lang]").forEach(el => {
+        el.hidden = el.dataset.lang !== lang;
+    });
+
+    document.querySelectorAll("[data-page]").forEach(el => {
+        el.href = el.dataset.page + "#" + lang;
+    });
+
+    document.getElementById("es-button")
+        .classList.toggle("active", lang === "es");
+
+    document.getElementById("en-button")
+        .classList.toggle("active", lang === "en");
+}
+
+window.addEventListener("hashchange", updateLanguage);
+updateLanguage();
 </script>
+
 </body>
 </html>

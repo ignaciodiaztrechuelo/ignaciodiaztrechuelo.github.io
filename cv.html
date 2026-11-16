@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV | Ignacio Díaz-Trechuelo</title>
+
+<style>
+:root {
+    --blue: #2049aa;
+    --text: #242528;
+    --muted: #666;
+    --line: #e2e2e2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: white;
+    line-height: 1.65;
+}
+
+a {
+    color: var(--blue);
+    text-underline-offset: 4px;
+}
+
+header {
+    border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+    max-width: 1050px;
+    margin: auto;
+    padding: 23px 30px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.brand {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text);
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.accent { color: var(--blue); }
+
+nav, .languages {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a, .languages a {
+    font-size: .9rem;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+nav a.active, .languages a.active {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.languages {
+    gap: 8px;
+    margin-left: 10px;
+}
+
+main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 60px 30px;
+}
+
+.cv-header {
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: .85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+h1 {
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    letter-spacing: -.05em;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+h1 span {
+    color: var(--muted);
+    font-weight: normal;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-size: .9rem;
+}
+
+section {
+    margin-top: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+    display: flex;
+    gap: 18px;
+    align-items: baseline;
+    margin-bottom: 24px;
+}
+
+.number {
+    color: var(--blue);
+    font-size: .85rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.75rem;
+    letter-spacing: -.03em;
+    margin: 0;
+}
+
+.entry {
+    display: grid;
+    grid-template-columns: 175px 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.entry:last-child { margin-bottom: 0; }
+
+.date {
+    color: var(--muted);
+    font-size: .85rem;
+    padding-top: 3px;
+}
+
+h3 {
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.organization {
+    color: var(--muted);
+    margin: 3px 0;
+    font-size: .95rem;
+}
+
+.description {
+    margin: 7px 0 0;
+    font-size: .95rem;
+}
+
+.description li::marker {
+    color: var(--blue);
+}
+
+ul { padding-left: 20px; }
+
+.status {
+    color: var(--blue);
+    font-size: .8rem;
+    margin-left: 6px;
+}
+
+footer {
+    max-width: 990px;
+    margin: auto;
+    padding: 20px 0;
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+[hidden] { display: none !important; }
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 18px 22px;
+    }
+
+    .brand { width: 100%; }
+
+    main { padding: 35px 22px; }
+
+    .entry {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    h2 { font-size: 1.45rem; }
+
+    footer { margin: 0 22px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <a class="brand" data-page="index.html" href="index.html">
+            Ignacio Díaz-Trechuelo<span class="accent">.</span>
+        </a>
+
+        <nav>
+            <a data-page="index.html" href="index.html">
+                <span data-lang="es">Sobre mí</span>
+                <span data-lang="en" hidden>About</span>
+            </a>
+            <a class="active" data-page="cv.html" href="cv.html">CV</a>
+        </nav>
+
+        <div class="languages">
+            <a href="#es" id="es-button">ES</a>
+            <span>/</span>
+            <a href="#en" id="en-button">EN</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<!-- ESPAÑOL -->
+<div data-lang="es" lang="es">
+
+    <div class="cv-header">
+        <p class="eyebrow">Currículum vitae · Noviembre 2026</p>
+
+        <h1>
+            Ignacio<br>
+            <span>Díaz-Trechuelo Sánchez-Molini</span>
+        </h1>
+
+        <div class="contact">
+            <span>Sevilla, España</span>
+            <a href="mailto:idtrechuelo@gmail.com">idtrechuelo@gmail.com</a>
+            <a href="tel:+34644304865">+34 644 30 48 65</a>
+            <a href="cv.pdf" target="_blank" rel="noopener">
+                Abrir CV (PDF) ↗
+            </a>
+        </div>
+    </div>
+
+    <section>
+        <div class="section-heading">
+            <span class="number">01</span>
+            <h2>Experiencia profesional</h2>
+        </div>
+
+        <article class="entry">
+            <div class="date">Ene – May 2027</div>
+            <div>
+                <h3>Prácticas profesionales de cocina y sala
+                    <span class="status">Próximamente</span>
+                </h3>
+                <p class="organization">Restaurante Alabardero Escuela</p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Nov 2026 – Actualidad</div>
+            <div>
+                <h3>Personal de cocina</h3>
+                <p class="organization">Catering Antonio Bort</p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">2026 – Actualidad</div>
+            <div>
+                <h3>Arroces para eventos · Proyecto propio</h3>
+                <p class="organization">Sevilla y Huelva</p>
+                <p class="description">
+                    Planificación, compras y elaboración de arroces
+                    en directo para eventos de hasta 60 personas.
+                </p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Verano 2025</div>
+            <div>
+                <h3>Ride Attendant → Lead</h3>
+                <p class="organization">
+                    Mt. Olympus Water &amp; Theme Park · Wisconsin, EE. UU.
+                </p>
+                <ul class="description">
+                    <li>Ascendido a Lead en tres semanas.</li>
+                    <li>Reconocido varias veces como Employee of the Week.</li>
+                    <li>Supervisión del equipo, gestión de descansos
+                        y atención a visitantes.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">2019 – 2026<br>7 temporadas</div>
+            <div>
+                <h3>Monitor de vela</h3>
+                <p class="organization">Surffactory, S.L. · Islantilla</p>
+                <ul class="description">
+                    <li>Formación y atención a clientes en español e inglés.</li>
+                    <li>Venta de actividades y paquetes.</li>
+                    <li>Organización de tareas y planificación diaria.</li>
+                    <li>Gestión de material y logística.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">2023</div>
+            <div>
+                <h3>Camarero de eventos</h3>
+                <p class="organization">Catering Alberto Mejías</p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Oct 2022 – Feb 2023</div>
+            <div>
+                <h3>Mantenimiento y apoyo en oficina</h3>
+                <p class="organization">Gros, S.L.</p>
+                <p class="description">
+                    Limpieza, reparaciones y mantenimiento de urbanizaciones,
+                    organización de empleados y atención a clientes.
+                </p>
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <div class="section-heading">
+            <span class="number">02</span>
+            <h2>Formación</h2>
+        </div>
+
+        <article class="entry">
+            <div class="date">2026 – Actualidad</div>
+            <div>
+                <h3>Título Superior de Gestión de Hotel y Empresas Turísticas</h3>
+                <p class="organization">
+                    Escuela Superior de Hostelería de Sevilla
+                </p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">2024 – 2025</div>
+            <div>
+                <h3>Microtítulo de Contabilidad Empresarial</h3>
+                <p class="organization">UNED</p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">2021</div>
+            <div>
+                <h3>Bachillerato</h3>
+                <p class="organization">Preuniversitaria de Sevilla</p>
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <div class="section-heading">
+            <span class="number">03</span>
+            <h2>Competencias</h2>
+        </div>
+
+        <article class="entry">
+            <div class="date">Profesionales</div>
+            <div>
+                Atención al cliente, ventas, cocina y servicio de sala,
+                supervisión de equipos y organización de eventos.
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Personales</div>
+            <div>
+                Adaptabilidad, aprendizaje rápido, resistencia
+                en jornadas intensas y autoexigencia.
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <div class="section-heading">
+            <span class="number">04</span>
+            <h2>Información adicional</h2>
+        </div>
+
+        <article class="entry">
+            <div class="date">Idiomas</div>
+            <div>Español nativo e inglés B2.</div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Movilidad</div>
+            <div>Carné B y vehículo propio.</div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Datos personales</div>
+            <div>Nacido en 2003 · Sevilla.</div>
+        </article>
+    </section>
+
+</div>
+
+<!-- ENGLISH -->
+<div data-lang="en" lang="en" hidden>
+
+    <div class="cv-header">
+        <p class="eyebrow">Curriculum vitae · November 2026</p>
+
+        <h1>
+            Ignacio Díaz-Trechuelo<br>
+            <span>Sánchez-Molini</span>
+        </h1>
+
+        <div class="contact">
+            <span>Seville, Spain</span>
+            <a href="mailto:idtrechuelo@gmail.com">idtrechuelo@gmail.com</a>
+            <a href="tel:+34644304865">+34 644 30 48 65</a>
+            <a href="cv.pdf" target="_blank" rel="noopener">
+                Open CV (PDF) ↗
+            </a>
+        </div>
+    </div>
+
+    <section>
+        <div class="section-heading">
+            <span class="number">01</span>
+            <h2>Professional experience</h2>
+        </div>
+
+        <article class="entry">
+            <div class="date">Jan – May 2027</div>
+            <div>
+                <h3>Professional internship · Kitchen and dining room
+                    <span class="status">Upcoming</span>
+                </h3>
+                <p class="organization">Restaurante Alabardero Escuela</p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Nov 2026 – Present</div>
+            <div>
+                <h3>Kitchen staff</h3>
+                <p class="organization">Catering Antonio Bort</p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">2026 – Present</div>
+            <div>
+                <h3>Rice dishes for events · Own project</h3>
+                <p class="organization">Seville and Huelva</p>
+                <p class="description">
+                    Planning, purchasing and live cooking for private
+                    events of up to 60 guests.
+                </p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Summer 2025</div>
+            <div>
+                <h3>Ride Attendant → Lead</h3>
+                <p class="organization">
+                    Mt. Olympus Water &amp; Theme Park · Wisconsin, USA
+                </p>
+                <ul class="description">
+                    <li>Promoted to Lead within three weeks.</li>
+                    <li>Named Employee of the Week several times.</li>
+                    <li>Team supervision, break scheduling and guest service.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">2019 – 2026<br>7 seasons</div>
+            <div>
+                <h3>Sailing instructor</h3>
+                <p class="organization">Surffactory, S.L. · Islantilla</p>
+                <ul class="description">
+                    <li>Teaching and customer service in Spanish and English.</li>
+                    <li>Sales of activities and packages.</li>
+                    <li>Task allocation and daily planning.</li>
+                    <li>Equipment management and logistics.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">2023</div>
+            <div>
+                <h3>Event waiter</h3>
+                <p class="organization">Catering Alberto Mejías</p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Oct 2022 – Feb 2023</div>
+            <div>
+                <h3>Maintenance and office support</h3>
+                <p class="organization">Gros, S.L.</p>
+                <p class="description">
+                    Residential maintenance, repairs, staff organisation
+                    and client relations.
+                </p>
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <div class="section-heading">
+            <span class="number">02</span>
+            <h2>Education</h2>
+        </div>
+
+        <article class="entry">
+            <div class="date">2026 – Present</div>
+            <div>
+                <h3>Higher Degree in Hotel and Tourism Management</h3>
+                <p class="organization">
+                    Escuela Superior de Hostelería de Sevilla
+                </p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">2024 – 2025</div>
+            <div>
+                <h3>Micro-credential in Business Accounting</h3>
+                <p class="organization">
+                    UNED · Spanish National Distance Learning University
+                </p>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">2021</div>
+            <div>
+                <h3>Spanish upper-secondary diploma</h3>
+                <p class="organization">Preuniversitaria de Sevilla</p>
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <div class="section-heading">
+            <span class="number">03</span>
+            <h2>Skills</h2>
+        </div>
+
+        <article class="entry">
+            <div class="date">Professional</div>
+            <div>
+                Customer service, sales, kitchen and dining-room service,
+                team supervision and event organisation.
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Personal</div>
+            <div>
+                Adaptability, fast learning, stamina for demanding shifts,
+                and high personal standards.
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <div class="section-heading">
+            <span class="number">04</span>
+            <h2>Additional information</h2>
+        </div>
+
+        <article class="entry">
+            <div class="date">Languages</div>
+            <div>Native Spanish and B2 English.</div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Mobility</div>
+            <div>Driving licence and own vehicle.</div>
+        </article>
+
+        <article class="entry">
+            <div class="date">Personal details</div>
+            <div>Born in 2003 · Seville.</div>
+        </article>
+    </section>
+
+</div>
+
+</main>
+
+<footer>
+    © 2026 Ignacio Díaz-Trechuelo ·
+    <a href="mailto:idtrechuelo@gmail.com">Email</a>
+</footer>
+
+<script>
+function updateLanguage() {
+    const lang = location.hash === "#en" ? "en" : "es";
+
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-lang]").forEach(el => {
+        el.hidden = el.dataset.lang !== lang;
+    });
+
+    document.querySelectorAll("[data-page]").forEach(el => {
+        el.href = el.dataset.page + "#" + lang;
+    });
+
+    document.getElementById("es-button")
+        .classList.toggle("active", lang === "es");
+
+    document.getElementById("en-button")
+        .classList.toggle("active", lang === "en");
+}
+
+window.addEventListener("hashchange", updateLanguage);
+updateLanguage();
+</script>
+
+</body>
+</html>
